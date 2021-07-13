@@ -34,16 +34,16 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
       
-  portainer:
-    image: portainer/portainer
-    container_name: portainer
-    restart: always
-    ports:
-      - "9000:9000"
-    command: -H unix:///var/run/docker.sock
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /home/pi/hassio/portainer:/data:rw
+#   portainer:
+#     image: portainer/portainer
+#     container_name: portainer
+#     restart: always
+#     ports:
+#       - "9000:9000"
+#     command: -H unix:///var/run/docker.sock
+#     volumes:
+#       - /var/run/docker.sock:/var/run/docker.sock
+#       - /home/pi/hassio/portainer:/data:rw
 
   bt-mqtt-gateway:
     container_name: bt-mqtt-gateway
@@ -61,3 +61,16 @@ services:
     network_mode: host
     depends_on:
       - mosquitto
+      
+  bt2mqtt-configurator:
+    image: "causticlab/hass-configurator-docker:arm"
+    container_name: bt2mqtt-configurator
+    restart: always
+    privileged: true
+    ports:
+      - "3218:3218/tcp"
+    depends_on:
+      - bt-mqtt-gateway
+    volumes:
+      - /opt/bt2mqtt/config:/config
+      - /opt/bt-mqtt-gateway:/application
