@@ -33,6 +33,8 @@ services:
       - /home/pi/hassio/scripts:/scripts
       - /var/run/docker.sock:/var/run/docker.sock
       - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
+    depends_on:
+      - mosquitto
       
 #   portainer:
 #     image: portainer/portainer
@@ -61,6 +63,7 @@ services:
     network_mode: host
     depends_on:
       - mosquitto
+      - hassos
       
   bt2mqtt-configurator:
     image: "causticlab/hass-configurator-docker:arm"
