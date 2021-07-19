@@ -1,11 +1,11 @@
 #切換到Desktop
-cd /home/pi/Desktop
+cd /home/pi/Desktop/hassio-docker-compose/
 
-echo '############## start to git clone ###################'
-sudo git clone https://github.com/awlchang/hassio-docker-compose.git
+#echo '############## start to git clone ###################'
+#sudo git clone https://github.com/awlchang/hassio-docker-compose.git
 
 #切換到homeassistant-docker-compose資料夾
-cd hassio-docker-compose/
+#cd hassio-docker-compose/
 
 echo '############## docker-compose up -d ###################'
 #執行docker-compose.yml內的services
