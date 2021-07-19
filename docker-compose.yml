@@ -14,7 +14,7 @@ services:
       - /opt/data-mosquitto/data:/mosquitto/data
       - /opt/data-mosquitto/log:/mosquitto/log
 
-  hassio:
+  hassos:
     image: homeassistant/armv7-hassio-supervisor
     container_name: hassio_supervisor
     privileged: true
@@ -63,7 +63,7 @@ services:
     network_mode: host
     depends_on:
       - mosquitto
-      - hassio
+      - hassos
       
   bt2mqtt-configurator:
     image: "causticlab/hass-configurator-docker:arm"
