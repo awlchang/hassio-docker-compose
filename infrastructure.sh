@@ -40,7 +40,7 @@ sudo mkdir /opt/data-mosquitto
 sudo mkdir /opt/data-mosquitto/config /opt/data-mosquitto/data /opt/data-mosquitto/log
 
 # 設定子資料夾config, data和log的使用權限只有讀取和執行
-sudo chmod 755 -R /opt/data-mosquitto/config /opt/data-mosquitto/data /opt/data-mosquitto/log
+sudo chmod 777 -R /opt/data-mosquitto/config /opt/data-mosquitto/data /opt/data-mosquitto/log
 
 # 建立mosquitto的設定檔
 sudo echo 'persistence true
