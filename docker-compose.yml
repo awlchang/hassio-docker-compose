@@ -63,7 +63,7 @@ services:
     network_mode: host
     depends_on:
       - mosquitto
-      - hassos
+      - hasso
       
   bt2mqtt-configurator:
     image: "causticlab/hass-configurator-docker:arm"
