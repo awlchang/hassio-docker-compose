@@ -80,5 +80,5 @@ sudo echo '{
   "ENFORCE_BASEPATH": true
 }' > /opt/bt2mqtt/config/settings.conf
 
-echo '############## finished reboot now ###################'
+echo '############## finished and reboot now ###################'
 sudo reboot now
