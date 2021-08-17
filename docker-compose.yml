@@ -57,6 +57,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /opt/bt-mqtt-gateway/config.yaml:/config.yaml
+      - /opt/bt-mqtt-gateway/notbarcodereader.txt:/application/notbarcodereader.txt
     cap_add:
       - NET_ADMIN
       - SYS_ADMIN
