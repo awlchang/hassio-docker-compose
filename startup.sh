@@ -10,3 +10,5 @@ cd /home/pi/Desktop/hassio-docker-compose/
 echo '############## docker-compose up -d ###################'
 #執行docker-compose.yml內的services
 sudo docker-compose up -d
+
+sudo mv /home/pi/Desktop/hassio-docker-compose/configuration.yaml /home/pi/hassio/data/homeassistant/configuration.yaml
