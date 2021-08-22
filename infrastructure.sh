@@ -32,6 +32,9 @@ sudo apt -y install python3-pip
 sudo pip3 install docker-compose
 docker-compose version
 
+sudo groupadd docker
+sudo usermod -aG docker $USER
+
 echo '############## setting mosquitto service ###################'
 # 建立data-mosquitto資料夾
 sudo mkdir /opt/data-mosquitto
