@@ -73,6 +73,7 @@ sudo rm /opt/bt-mqtt-gateway/gateway.py
 #設定權限為可編輯
 sudo chmod 777 -R /opt/bt-mqtt-gateway/
 
+sudo mkdir -p /home/pi/hassio
 sudo mkdir -p /home/pi/hassio/{scripts,data,portainer}
 
 sudo mkdir /opt/bt2mqtt
