@@ -36,6 +36,15 @@ services:
     depends_on:
       - mosquitto
       
+  ha-server-monitor:
+    container_name: ha-server-monitor
+    image: akashic0616/ha-server-monitor:latest    
+    restart: always
+    network_mode: host
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /home/pi/hassio/data/homeassistant/configuration.yaml:/app/configuration.yaml
+      
 #   portainer:
 #     image: portainer/portainer
 #     container_name: portainer
