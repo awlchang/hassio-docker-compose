@@ -74,7 +74,11 @@ sudo rm /opt/bt-mqtt-gateway/gateway.py
 sudo chmod 777 -R /opt/bt-mqtt-gateway/
 
 sudo mkdir /home/pi/hassio
-sudo mkdir -p /home/pi/hassio/{scripts,data,portainer}
+sudo mkdir -p /home/pi/hassio/scripts
+sudo mkdir -p /home/pi/hassio/data
+sudo mkdir -p /home/pi/hassio/portainer
+sudo mkdir /home/pi/hassio/data/homeassistant
+sudo mv /home/pi/Desktop/hassio-docker-compose/configuration.yaml /home/pi/hassio/data/homeassistant/configuration.yaml
 
 sudo mkdir /opt/bt2mqtt
 sudo mkdir /opt/bt2mqtt/config
