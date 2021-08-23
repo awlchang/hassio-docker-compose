@@ -33,7 +33,7 @@ sudo pip3 install docker-compose
 docker-compose version
 
 sudo groupadd docker
-sudo usermod -aG docker $USER
+sudo usermod -aG docker (users | cut -d' ' -f1)
 
 echo '############## setting mosquitto service ###################'
 # 建立data-mosquitto資料夾
