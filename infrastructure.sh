@@ -55,7 +55,19 @@ log_dest stdout
 
 allow_anonymous true
 #password_file /mosquitto/config/mosquitto.passwd
-listener 1883' > /opt/data-mosquitto/config/mosquitto.conf
+listener 1883
+
+connection test-mosquitto-org
+address test.mosquitto.org
+cleansession true
+
+topic # both 0
+
+connection mqtt-eclipseprojects-io
+address mqtt.eclipseprojects.io
+cleansession true
+
+topic # both 0' > /opt/data-mosquitto/config/mosquitto.conf
 
 echo '############## setting zewelor/bt-mqtt-gateway service ###################'
 #切換到opt資料夾
