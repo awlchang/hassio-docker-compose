@@ -63,13 +63,13 @@ listener 1883
 connection test-mosquitto-org
 address test.mosquitto.org
 cleansession true
-clientid $eth0MACADDR
+clientid '$eth0MACADDR'
 topic # both 0
 
 connection mqtt-eclipseprojects-io
 address mqtt.eclipseprojects.io
 cleansession true
-clientid $wlan0MACADDR
+clientid '$wlan0MACADDR'
 topic # both 0' > /opt/data-mosquitto/config/mosquitto.conf
 
 echo '############## setting zewelor/bt-mqtt-gateway service ###################'
