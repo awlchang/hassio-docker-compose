@@ -46,6 +46,9 @@ sudo mkdir /opt/data-mosquitto/config /opt/data-mosquitto/data /opt/data-mosquit
 # 設定子資料夾config, data和log的使用權限只有讀取和執行
 sudo chmod 777 -R /opt/data-mosquitto/config /opt/data-mosquitto/data /opt/data-mosquitto/log
 
+eth0MACADDR=$(cat /sys/class/net/eth0/address | sed 's/://g' | sha256sum | cut -d' ' -f1)
+wlan0MACADDR=$(cat /sys/class/net/wlan0/address | sed 's/://g' | sha256sum | cut -d' ' -f1)
+
 # 建立mosquitto的設定檔
 sudo echo 'persistence true
 persistence_location /mosquitto/data/
@@ -60,13 +63,13 @@ listener 1883
 connection test-mosquitto-org
 address test.mosquitto.org
 cleansession true
-
+clientid $eth0MACADDR
 topic # both 0
 
 connection mqtt-eclipseprojects-io
 address mqtt.eclipseprojects.io
 cleansession true
-
+clientid $wlan0MACADDR
 topic # both 0' > /opt/data-mosquitto/config/mosquitto.conf
 
 echo '############## setting zewelor/bt-mqtt-gateway service ###################'
