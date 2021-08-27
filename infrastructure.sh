@@ -45,6 +45,7 @@ sudo mkdir /opt/data-mosquitto/config /opt/data-mosquitto/data /opt/data-mosquit
 
 # 設定子資料夾config, data和log的使用權限只有讀取和執行
 sudo chmod 777 -R /opt/data-mosquitto/config /opt/data-mosquitto/data /opt/data-mosquitto/log
+sudo chmod 766 /opt/data-mosquitto/config/mosquitto.conf
 
 eth0MACADDR=$(cat /sys/class/net/eth0/address | sed 's/://g' | sha256sum | cut -d' ' -f1)
 wlan0MACADDR=$(cat /sys/class/net/wlan0/address | sed 's/://g' | sha256sum | cut -d' ' -f1)
