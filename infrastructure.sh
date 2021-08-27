@@ -60,8 +60,8 @@ allow_anonymous true
 #password_file /mosquitto/config/mosquitto.passwd
 listener 1883
 
-connection broker-hivemq-com
-address broker.hivemq.com
+connection test-mosquitto-org
+address test.mosquitto.org
 cleansession true
 clientid '$eth0MACADDR'
 topic # both 0
