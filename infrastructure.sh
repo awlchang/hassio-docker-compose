@@ -71,7 +71,7 @@ connection mqtt-eclipseprojects-io
 address mqtt.eclipseprojects.io
 cleansession true
 clientid '$wlan0MACADDR'
-topic # both 0' > /opt/data-mosquitto/config/mosquitto.conf
+topic # in 0 rcsl/ rcsl/' > /opt/data-mosquitto/config/mosquitto.conf
 
 echo '############## setting zewelor/bt-mqtt-gateway service ###################'
 #切換到opt資料夾
