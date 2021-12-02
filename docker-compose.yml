@@ -90,5 +90,6 @@ services:
     depends_on:
       - bt-mqtt-gateway
     volumes:
-      - /opt/bt2mqtt/config:/config
+      #- /opt/bt2mqtt/config:/config
       - /opt/bt-mqtt-gateway:/application
+      - /opt/data-mosquitto/config:/config
